@@ -30,15 +30,16 @@ class Books extends Component {
     render() {
         return (
             <StyledBooksContainer>
-                <h2>Your Books:</h2>
+                <h2>Library:</h2>
 
                 {this.props.books.map(book => {
                     return (
-                        <NavLink to={`/book/${book._id}`} key={book._id}>
+                        <NavLink to={`/books/${book.id}`} key={book.id}>
                             <StyledBook>
                                 <Book
                                     title={book.title}
                                     textBody={book.textBody}
+                                    key={book.key}
                                 />
                             </StyledBook>
                         </NavLink>

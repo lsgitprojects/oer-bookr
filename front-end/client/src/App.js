@@ -11,7 +11,7 @@ import BookView from './components/BookView'
 import EditBook from './components/EditBook'
 import SearchBarContainer from './components/SearchBarContainer';
 
-const url = new URL('https://oer-bookr-api.herokuapp.com/books')
+const url = new URL('https://oer-bookr-api.herokuapp.com/')
 
 
 class App extends Component {
@@ -32,11 +32,11 @@ class App extends Component {
     })
 
     axios
-      .get(`${url}get/all`)
+      .get(`${url}books`)
       .then(res => {
         console.log(res.data);
         this.setState({
-          notes: res.data
+          books: res.data
         })
       })
       .catch(err => console.log(err))
@@ -44,14 +44,14 @@ class App extends Component {
 
   addBook = data => {
     axios
-      .post(`${url}create`, data)
+      .post(`${url}books`, data)
       .then(res => {
         console.log(res)
         return axios
-          .get(`${url}get/all`)
+          .get(`${url}books`)
           .then(res => {
             this.setState({
-              notes: res.data
+              books: res.data
             })
           })
       })
@@ -60,14 +60,14 @@ class App extends Component {
 
   deleteBook = id => {
     axios
-      .delete(`${url}delete/${id}`)
+      .delete(`${url}books/${id}`)
       .then(res => {
         console.log(res);
         return axios
-          .get(`${url}get/all`)
+          .get(`${url}books`)
           .then(res => {
             this.setState({
-              notes: res.data
+              books: res.data
             })
           })
           .catch(err => console.log(err))
@@ -75,11 +75,11 @@ class App extends Component {
   }
 
   searchBooks(query) {
-    let notes = this.state.notes.filter((note) => {
-      return note.title.toLowerCase().includes(query) || note.textBody.toLowerCase().includes(query)
+    let books = this.state.books.filter((book) => {
+      return book.title.toLowerCase().includes(query) || book.textBody.toLowerCase().includes(query)
     });
     this.setState({
-      notes: notes
+      books: books
     })
   }
 

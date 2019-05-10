@@ -48,7 +48,12 @@ class BookForm extends Component {
         super(props);
         this.state = {
             title: '',
-            textBody: ''
+            author: '',
+            publisher: '',
+            license: '',
+            subject: '',
+            image: '',
+            link: ''
         };
     }
 
