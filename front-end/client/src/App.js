@@ -75,7 +75,7 @@ class App extends Component {
 
   searchBooks(query) {
     let books = this.state.books.filter((book) => {
-      return book.title.toLowerCase().includes(query) || book.textBody.toLowerCase().includes(query)
+      return book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query) || book.subject.toLowerCase().includes(query)
     });
     this.setState({
       books: books

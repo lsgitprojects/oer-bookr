@@ -14,7 +14,7 @@ input {
 class SearchBarContainer extends React.Component {
 
     handleSearch(event) {
-        this.props.searchNotes(event.target.value)
+        this.props.searchBooks(event.target.value)
     }
 
     render() {

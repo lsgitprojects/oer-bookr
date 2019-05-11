@@ -22,15 +22,16 @@ input {
     margin-bottom: 5px;
     border: 2px solid #C9C9C9;
     padding: 5px;
+    height: 50px;
     :first-child {
-        height: 50px;
+        // height: 50px;
         padding-left: 10px;
     }
     :nth-child(2) {
-        height: 500px;
+        // height: 500px;
         width: 1000px;
         text-align: top;
-        padding-bottom: 440px;
+        // padding-bottom: 440px;
         padding-left: 10px;
     }
 }
@@ -71,7 +72,7 @@ class BookForm extends Component {
     render() {
         return (
             <StyledBookForm>
-                <h2>Create New Book:</h2>
+                <h2>Add a Book:</h2>
                 <form onSubmit={this.submitChange}>
                     <input
                         onChange={this.handleInputChange}
