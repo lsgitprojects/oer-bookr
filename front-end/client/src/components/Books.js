@@ -39,6 +39,7 @@ class Books extends Component {
                                 <Book
                                     title={book.title}
                                     textBody={book.textBody}
+                                    author={book.author}
                                     key={book.key}
                                 />
                             </StyledBook>

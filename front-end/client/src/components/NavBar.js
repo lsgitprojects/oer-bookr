@@ -23,7 +23,7 @@ const NavButton = styled.button`
 width: 200px;
 height: 50px;
 color: #F2F9F8;
-background-color: #24B8BD;
+background-color: #433A30;
 font-size: 1rem;
 :first-child {
 margin-bottom: 1rem;

@@ -37,7 +37,7 @@ input {
 button {
     width: 210px;
     height: 50px;
-    background-color: #24B8BD;
+    background-color: #433A30;
     color: #F9FCFC;
     border: 2px solid #C9C9C9;
 }
