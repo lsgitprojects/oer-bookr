@@ -44,7 +44,6 @@ class Books extends Component {
                                     subject={book.subject}
                                     image={book.image}
                                     link={book.link}
-                                    author={book.author}
                                     key={book.id}
                                 />
                             </StyledBook>

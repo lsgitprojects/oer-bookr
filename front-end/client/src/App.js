@@ -8,7 +8,7 @@ import Books from './components/Books'
 import BookForm from './components/BookForm'
 import NavBar from './components/NavBar'
 import BookView from './components/BookView'
-import EditBook from './components/EditBook'
+// import EditBook from './components/EditBook'
 import SearchBarContainer from './components/SearchBarContainer';
 
 const url = new URL('https://oer-bookr-api.herokuapp.com/')
@@ -102,9 +102,9 @@ class App extends Component {
         <Route path='/create'
           render={props => <BookForm addBook={this.addBook} {...props} />}
         />
-        <Route path='/books/:id'
+        {/* <Route path='/books/:id'
           render={props => <EditBook notes={this.state.books} {...props} />}
-        />
+        /> */}
       </div>
     );
   }
