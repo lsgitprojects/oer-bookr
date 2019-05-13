@@ -22,11 +22,11 @@ const Book = props => {
         <BookContainer>
             <h3>{props.title}</h3>
             <p>{props.author}</p>
-            <p>{props.publisher}</p>
+            {/* <p>{props.publisher}</p>
             <p>{props.license}</p>
             <p>{props.subject}</p>
             <p>{props.image}</p>
-            <p>{props.link}</p>
+            <p>{props.link}</p> */}
         </BookContainer>
     );
 };

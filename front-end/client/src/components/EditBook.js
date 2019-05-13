@@ -49,7 +49,12 @@ class EditBook extends Component {
         super(props);
         this.state = {
             title: '',
-            textBody: ''
+            author: '',
+            publisher: '',
+            license: '',
+            subject: '',
+            image: '',
+            link: ''
         };
     }
 
@@ -58,7 +63,12 @@ class EditBook extends Component {
             if (this.props.match.params.id === book._id) {
                 return this.setState({
                     title: book.title,
-                    textBody: book.textBody
+                    author: book.title,
+                    publisher: book.publisher,
+                    license: book.license,
+                    subject: book.subject,
+                    image: book.image,
+                    link: book.link
                 })
             } else {
                 return 'error'
@@ -72,15 +82,25 @@ class EditBook extends Component {
         const id = this.props.match.params.id
         const book = {
             title: this.state.title,
-            textBody: this.state.textBody
+            author: this.state.author,
+            publisher: this.state.publisher,
+            license: this.state.license,
+            subject: this.state.subject,
+            image: this.state.image,
+            link: this.state.link
         }
         axios
-            .put(`https://oer-bookr-api.herokuapp.com/books/edit/${id}`, book)
+            .put(`https://oer-bookr-api.herokuapp.com/books/${id}`, book)
             .then(res => {
                 console.log(res)
                 this.setState({
                     title: '',
-                    text: '',
+                    author: '',
+                    publisher: '',
+                    license: '',
+                    subject: '',
+                    image: '',
+                    link: ''
                 })
                 window.location.reload();
             })
@@ -98,15 +118,45 @@ class EditBook extends Component {
                 <form onSubmit={this.submitChange}>
                     <input
                         onChange={this.handleInputChange}
-                        placeholder="Note Title"
+                        placeholder="Book Title"
                         value={this.state.title}
                         name="title"
                     />
                     <input
                         onChange={this.handleInputChange}
-                        placeholder="Note Content"
-                        value={this.state.textBody}
-                        name="textBody"
+                        placeholder="Book Author"
+                        value={this.state.author}
+                        name="author"
+                    />
+                    <input
+                        onChange={this.handleInputChange}
+                        placeholder="Book Publisher"
+                        value={this.state.publisher}
+                        name="publisher"
+                    />
+                    <input
+                        onChange={this.handleInputChange}
+                        placeholder="Book License"
+                        value={this.state.license}
+                        name="license"
+                    />
+                    <input
+                        onChange={this.handleInputChange}
+                        placeholder="Book Subject"
+                        value={this.state.subject}
+                        name="subject"
+                    />
+                    <input
+                        onChange={this.handleInputChange}
+                        placeholder="Book Image"
+                        value={this.state.image}
+                        name="image"
+                    />
+                    <input
+                        onChange={this.handleInputChange}
+                        placeholder="Book Link"
+                        value={this.state.link}
+                        name="link"
                     />
                     <button type="submit">Update</button>
                 </form>

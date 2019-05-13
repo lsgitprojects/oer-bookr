@@ -86,7 +86,7 @@ class BookView extends React.Component {
         return (
             <div>
                 {this.props.books.forEach(book => {
-                    if (this.props.match.params.id === book.id) {
+                    if (this.props.match.params.name === book.id) {
                         return (
                             <BookViewContainer key={book.id}>
                                 <BookViewButtons>

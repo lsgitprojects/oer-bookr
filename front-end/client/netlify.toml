@@ -1,0 +1,3 @@
+base = "oer-bookr/front-end/"
+publish = "oer-bookr/front-end/client/public"
+command = "echo 'default context'"

@@ -38,9 +38,14 @@ class Books extends Component {
                             <StyledBook>
                                 <Book
                                     title={book.title}
-                                    textBody={book.textBody}
                                     author={book.author}
-                                    key={book.key}
+                                    publisher={book.publisher}
+                                    license={book.license}
+                                    subject={book.subject}
+                                    image={book.image}
+                                    link={book.link}
+                                    author={book.author}
+                                    key={book.id}
                                 />
                             </StyledBook>
                         </NavLink>

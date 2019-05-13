@@ -102,7 +102,7 @@ class App extends Component {
         <Route path='/create'
           render={props => <BookForm addBook={this.addBook} {...props} />}
         />
-        <Route path='/edit/:id'
+        <Route path='/books/:id'
           render={props => <EditBook notes={this.state.books} {...props} />}
         />
       </div>
